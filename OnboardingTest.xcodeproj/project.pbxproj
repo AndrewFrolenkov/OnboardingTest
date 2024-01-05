@@ -13,6 +13,9 @@
 		52FAAE0A2B471BD4007D8CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAE092B471BD4007D8CC7 /* Assets.xcassets */; };
 		52FAAE0D2B471BD4007D8CC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAE0B2B471BD4007D8CC7 /* LaunchScreen.storyboard */; };
 		52FAAE222B4760A9007D8CC7 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAE212B4760A9007D8CC7 /* WelcomeScreenController.swift */; };
+		52FAAE262B48095D007D8CC7 /* SushiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAE252B48095D007D8CC7 /* SushiModel.swift */; };
+		52FAAE282B480A1B007D8CC7 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAE272B480A1B007D8CC7 /* DataBase.swift */; };
+		52FAAE2A2B48130A007D8CC7 /* SushiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAE292B48130A007D8CC7 /* SushiCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		52FAAE0C2B471BD4007D8CC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52FAAE0E2B471BD4007D8CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52FAAE212B4760A9007D8CC7 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
+		52FAAE252B48095D007D8CC7 /* SushiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiModel.swift; sourceTree = "<group>"; };
+		52FAAE272B480A1B007D8CC7 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		52FAAE292B48130A007D8CC7 /* SushiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				52FAAE022B471BD2007D8CC7 /* SceneDelegate.swift */,
 				52FAAE212B4760A9007D8CC7 /* WelcomeScreenController.swift */,
 				52FAAE042B471BD2007D8CC7 /* OnboardingController.swift */,
+				52FAAE292B48130A007D8CC7 /* SushiCollectionViewCell.swift */,
+				52FAAE252B48095D007D8CC7 /* SushiModel.swift */,
+				52FAAE272B480A1B007D8CC7 /* DataBase.swift */,
 				52FAAE092B471BD4007D8CC7 /* Assets.xcassets */,
 				52FAAE0B2B471BD4007D8CC7 /* LaunchScreen.storyboard */,
 				52FAAE0E2B471BD4007D8CC7 /* Info.plist */,
@@ -137,9 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FAAE2A2B48130A007D8CC7 /* SushiCollectionViewCell.swift in Sources */,
 				52FAAE222B4760A9007D8CC7 /* WelcomeScreenController.swift in Sources */,
 				52FAAE052B471BD2007D8CC7 /* OnboardingController.swift in Sources */,
+				52FAAE262B48095D007D8CC7 /* SushiModel.swift in Sources */,
 				52FAAE012B471BD2007D8CC7 /* AppDelegate.swift in Sources */,
+				52FAAE282B480A1B007D8CC7 /* DataBase.swift in Sources */,
 				52FAAE032B471BD2007D8CC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
