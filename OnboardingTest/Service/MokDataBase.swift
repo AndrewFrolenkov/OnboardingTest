@@ -6,20 +6,23 @@
 //
 
 import Foundation
-import UIKit
 
-class DataBase {
+protocol MokDataBaseProtocol {
+  func fetchData() -> [SushiModel]
+}
+
+class MokDataBase: MokDataBaseProtocol  {
   
-  static func fetchSushi() -> [SushiModel] {
-    let firstItem = SushiModel(mainImage: UIImage(named: "image1"),
+  func fetchData() -> [SushiModel] {
+    let firstItem = SushiModel(mainImage: "image1",
                                description: "Ordina a domicilio senza limiti di distanza. Non è magia, è Moovenda!",
                                smallDescription: "PRONTO?")
     
-    let secondItem = SushiModel(mainImage: UIImage(named: "image2"),
-                               description: "Ogni tanto inviamo degli sconti esclusivi tramite notifiche push, ci stai?",
-                               smallDescription: "PROMOZIONI")
+    let secondItem = SushiModel(mainImage: "image2",
+                                description: "Ogni tanto inviamo degli sconti esclusivi tramite notifiche push, ci stai?",
+                                smallDescription: "PROMOZIONI")
     
-    let thirdItem = SushiModel(mainImage: UIImage(named: "image3"),
+    let thirdItem = SushiModel(mainImage: "image3",
                                description: "Per sfruttare al massimo l'app, puoi condividerci la tua posizione?",
                                smallDescription: "POSIZIONE")
     

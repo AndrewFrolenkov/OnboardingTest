@@ -11,6 +11,7 @@ import UIKit
 final class OnboardingController: UIViewController {
   
   // MARK: - Private Property
+  var presenter: OnboardingPresenterProtocol!
   private lazy var collectionView = settingCollectionView()
   private lazy var nextButton: UIButton = {
     let button = UIButton(configuration: .gray())
@@ -21,25 +22,12 @@ final class OnboardingController: UIViewController {
     return button
   }()
   
-  let array = DataBase.fetchSushi()
-  private var currentPage = 0 {
-    didSet {
-      if currentPage == array.count - 1 {
-        nextButton.setTitle("Close", for: .normal)
-      } else {
-        nextButton.setTitle("Next", for: .normal)
-      }
-    }
-  }
-  
   // MARK: - Override Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupView()
   }
-  
-  
 }
 
 // MARK: - Setting Views
@@ -55,9 +43,6 @@ private extension OnboardingController {
   func settingSuperview() {
     view.backgroundColor = #colorLiteral(red: 0.9263755679, green: 0.9263755679, blue: 0.9263755679, alpha: 1)
   }
-  
-  
-  
 }
 
 // MARK: - Setting
@@ -89,16 +74,11 @@ private extension OnboardingController {
   // nextButton Action
   @objc
   func nextPageAction(_ sender: UIButton) {
-    if currentPage == array.count - 1 {
-      dismiss(animated: true)
-    } else {
-      currentPage += 1
-      let indexPath = IndexPath(row: currentPage, section: 0)
-      collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-      
-    }
-   
+   let index = presenter.updateCurrentPage()
+   collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+    
   }
+  
 }
 
 // MARK: - Layout
@@ -126,16 +106,15 @@ extension OnboardingController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? SushiCollectionViewCell else { return UICollectionViewCell()}
-    cell.configureCell(model: array[indexPath.row])
+    let data = presenter.getData()
+    cell.configureCell(model: data[indexPath.row])
     return cell
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let width = scrollView.frame.width
-    currentPage = Int(scrollView.contentOffset.x / width)
+    presenter.currentPage = Int(scrollView.contentOffset.x / width)
   }
-  
-  
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -149,3 +128,14 @@ extension OnboardingController: UICollectionViewDelegateFlowLayout {
   }
 }
 
+extension OnboardingController: OnboardingProtocol {
+
+  func updateButtonTitle(title: String) {
+    nextButton.setTitle(title, for: .normal)
+  }
+  
+  func dismissController() {
+    dismiss(animated: true)
+  }
+  
+}

@@ -31,8 +31,6 @@ final class WelcomeScreenController: UIViewController {
   deinit {
     print("deinit")
   }
-  
-  
 }
 
 // MARK: - Setting Views
@@ -59,7 +57,6 @@ private extension WelcomeScreenController {
     gradientLayer.endPoint = Constants.Gradient.endPoint
     view.layer.insertSublayer(gradientLayer, at: 0)
   }
-  
 }
 
 // MARK: - Setting
@@ -92,7 +89,7 @@ private extension WelcomeScreenController {
   // onboardingButton Action
   @objc
   func onboardingButtonAction(_ sender: UIButton) {
-    let controller = OnboardingController()
+    let controller = ModuleBuilder.createOnboardingModule()
     transition(to: controller)
   }
 }

@@ -48,7 +48,7 @@ final class SushiCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Public Methods
   func configureCell(model: SushiModel) {
-    imageView.image = model.mainImage
+    imageView.image = UIImage(named: model.mainImage)
     descriptionLabel.text = model.description
     smallDescriptionLabel.text = model.smallDescription
   }
@@ -78,5 +78,4 @@ final class SushiCollectionViewCell: UICollectionViewCell {
       smallDescriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
     ])
   }
-  
 }

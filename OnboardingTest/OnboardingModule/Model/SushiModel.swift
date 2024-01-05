@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import UIKit
 
 struct SushiModel {
-  let mainImage: UIImage?
+  let mainImage: String
   let description: String
   let smallDescription: String
 }
