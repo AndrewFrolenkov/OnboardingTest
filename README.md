@@ -1,5 +1,7 @@
 # Onboarding
 
+![Запись экрана 2024-01-05 в 21 10 16](https://github.com/AndrewFrolenkov/OnboardingTest/assets/103962314/92c7b087-c841-45b9-8e31-83d9364093a6)
+
 ## Description
 
 Тестовое задание на позицию Junior iOS Developer
